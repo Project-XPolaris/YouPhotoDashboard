@@ -4,6 +4,6 @@ COPY . .
 RUN yarn install
 RUN yarn build
 
-FROM webcontainer
+FROM takayamaaren/webcontainer
 COPY --from=builder /app/dist /static
 ENTRYPOINT ["/usr/local/bin/webcontainer","run"]
